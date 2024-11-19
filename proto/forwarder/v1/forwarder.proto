@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package forwarder.v1;
+
+option go_package = "github.com/sverdejot/tracing-showcase/pkg/forwarder/v1";
+
+service ForwarderService {
+	rpc Forward(ForwardRequest) returns (ForwardResponse) {};
+}
+
+message ForwardRequest {
+	string message = 1;
+}
+
+message ForwardResponse {};

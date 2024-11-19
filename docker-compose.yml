@@ -1,0 +1,17 @@
+services:
+  server:
+    image: alpine:latest
+    volumes:
+      - ./bin:/bin
+    working_dir: /bin
+    entrypoint: ./server
+
+  client:
+    image: alpine:latest
+    volumes:
+      - ./bin:/bin
+    working_dir: /bin
+    entrypoint: ./client
+    environment:
+      TARGET: server
+      PORT: 8088
